@@ -20,6 +20,7 @@ php artisan up:init
 
 This command will install required composer packages, updates composer PSR4 section, update laravel configurations,
 create resource files.
+
 > ![IMPORTANT](https://ui-avatars.com/api/?name=!&size=80&background=EB4432&color=FBD2CC&font-size=0.75)
 >
 > This command completely overwrite:
@@ -92,12 +93,10 @@ activator with identifier `up_database` with next credentials:
 
 Next, current package set `up_database` activator as default module activator.
 This provides single correct module activator for using Universal Platform.
-> <div style="display: flex; align-items: center;">
-> <div class="important">!</div>
-> <div style="display: flex; align-items: center;">
+> ![IMPORTANT](https://ui-avatars.com/api/?name=!&size=80&background=EB4432&color=FBD2CC&font-size=0.75)
+>
 > Provided module activator use laravel cache system
-> </div>
-> </div>
+
 
 # Provided artisan commands
 
@@ -118,12 +117,10 @@ This will generate next files:
 * Seeder
   This generator use model `$fillable` property.
 
-> <div style="display: flex; align-items: center;">
-> <div class="important">!</div>
-> <div style="display: flex; align-items: center;">
+> ![IMPORTANT](https://ui-avatars.com/api/?name=!&size=80&background=EB4432&color=FBD2CC&font-size=0.75)
+>
 > Fill model `$fillable` property by certain fields. Otherwise, generation result will be unacceptable.
-> </div>
-> </div>
+
 
 **Options:**
 
@@ -147,12 +144,10 @@ php artisan up:require {module} {--M|no-migration} {--T|no-translation} {--P|no-
 ```
 
 Command will download and register module of Universal Platform.
-> <div style="display: flex; align-items: center;">
-> <div class="important">!</div>
-> <div style="display: flex; align-items: center;">
-> In will download file from **external** storage.
-> </div>
-> </div>
+> ![IMPORTANT](https://ui-avatars.com/api/?name=!&size=80&background=EB4432&color=FBD2CC&font-size=0.75)
+>
+> It will download file from **external** storage.
+
 
 **Options:**
 
