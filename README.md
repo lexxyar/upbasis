@@ -20,25 +20,14 @@ php artisan up:init
 
 <style>
 .important{
-    background-color:rgb(235 68 50 / 1);
-    width:80px;
-    min-width:80px;
-    max-width:80px;
-    height:80px;
-    min-height:80px;
-    max-height:80px;
-    margin:16px 16px 16px 0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:2.3rem;
+    background-color:rgb(235 68 50 / 1);width:80px;min-width:80px;max-width:80px;height:80px;min-height:80px;max-height:80px;margin:16px 16px 16px 0;display:flex;align-items:center;justify-content:center;font-size:2.3rem;
 }
 </style>
 
 This command will install required composer packages, updates composer PSR4 section, update laravel configurations,
 create resource files.
 > <div style="display: flex; align-items: center;">
-> <div class="important">!</div>
+> <div style="background-color:rgb(235 68 50 / 1);width:80px;min-width:80px;max-width:80px;height:80px;min-height:80px;max-height:80px;margin:16px 16px 16px 0;display:flex;align-items:center;justify-content:center;font-size:2.3rem;">!</div>
 > <div style="display: flex; align-items: center;">
 > <div>
 > This command completely overwrite:
