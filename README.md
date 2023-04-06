@@ -18,16 +18,39 @@ To prepare Laravel project for using and developing with Universal Platform, you
 php artisan up:init
 ```
 
+<svg fill="none" viewBox="0 0 600 300" width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
 <style>
 .important{
     background-color:rgb(235 68 50 / 1);width:80px;min-width:80px;max-width:80px;height:80px;min-height:80px;max-height:80px;margin:16px 16px 16px 0;display:flex;align-items:center;justify-content:center;font-size:2.3rem;
 }
 </style>
+<div style="display: flex; align-items: center;">
+<div style="background-color:rgb(235 68 50 / 1);width:80px;min-width:80px;max-width:80px;height:80px;min-height:80px;max-height:80px;margin:16px 16px 16px 0;display:flex;align-items:center;justify-content:center;font-size:2.3rem;">!</div>
+<div style="display: flex; align-items: center;">
+<div>
+This command completely overwrite:
+<ul>
+<li>/app/Http/Kernel.php</li>
+<li>app/Providers/AuthServiceProvider.php</li>
+<li>routes/web.php</li>
+<li>config/cors.php</li>
+<li>vite.config.js</li>
+<li>/resource</li>
+</ul>
+of your project.
+</div>
+</div>
+</div>
+</div>
+</foreignObject>
+</svg>
 
 This command will install required composer packages, updates composer PSR4 section, update laravel configurations,
 create resource files.
 > <div style="display: flex; align-items: center;">
-> <p style="background-color:rgb(235 68 50 / 1);width:80px;min-width:80px;max-width:80px;height:80px;min-height:80px;max-height:80px;margin:16px 16px 16px 0;display:flex;align-items:center;justify-content:center;font-size:2.3rem;">!</p>
+> <div style="background-color:rgb(235 68 50 / 1);width:80px;min-width:80px;max-width:80px;height:80px;min-height:80px;max-height:80px;margin:16px 16px 16px 0;display:flex;align-items:center;justify-content:center;font-size:2.3rem;">!</div>
 > <div style="display: flex; align-items: center;">
 > <div>
 > This command completely overwrite:
