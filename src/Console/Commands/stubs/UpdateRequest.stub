@@ -1,0 +1,32 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Modules\Core\Http\Requests\$VERSION$\AuthFormRequest;
+use Modules\Core\Services\AuthService;
+use Illuminate\Validation\Rule;
+
+class Update$MODEL_NAME$Request extends AuthFormRequest
+{
+    public function authorize(): bool
+    {
+        return AuthService::check('$MODEL_NAME_LOWERCASE$_update');
+    }
+
+    public function rules(): array
+    {
+        $aDefault = DefaultRules$MODEL_NAME$Request::rules();
+        $aDefault['name'] = Rule::unique('$MODEL_NAME_LOWERCASE$s')->ignore($this->$MODEL_NAME_LOWERCASE$->id);
+        if ($this->method() == 'PUT') {
+            return $aDefault;
+        } else {
+            $patchRules = [];
+            foreach ($aDefault as $field => $aRules) {
+                $newRules = $aRules;
+                array_unshift($newRules, 'sometimes');
+                $patchRules[$field] = $newRules;
+            }
+            return $patchRules;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\$MODULE_NAME$\Models\$MODEL_NAME$;
+
+class $MODEL_NAME$Factory extends Factory
+{
+    protected $model = $MODEL_NAME$::class;
+
+    public function definition(): array
+    {
+        return [
+$LOOP_FIELDS$
+        ];
+    }
+}

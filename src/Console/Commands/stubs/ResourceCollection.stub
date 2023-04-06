@@ -1,0 +1,13 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Http\Resources\Json\ResourceCollection;
+
+class $MODEL_NAME$Collection extends ResourceCollection
+{
+    public function toArray($request): array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable
+    {
+        return parent::toArray($request);
+    }
+}

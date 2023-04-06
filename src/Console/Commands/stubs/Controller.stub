@@ -1,0 +1,89 @@
+<?php
+namespace $NAMESPACE$;
+
+use Lexxsoft\Upbasis\Http\Resources\UnauthorizedResource;
+use Modules\Core\Http\Controllers\Controller;
+use Modules\$MODULE_NAME$\Http\Requests\$VERSION$\$MODEL_NAME$\Create$MODEL_NAME$Request;
+use Modules\$MODULE_NAME$\Http\Requests\$VERSION$\$MODEL_NAME$\Update$MODEL_NAME$Request;
+use Modules\$MODULE_NAME$\Http\Resources\$VERSION$\$MODEL_NAME$\$MODEL_NAME$Collection;
+use Modules\$MODULE_NAME$\Http\Resources\$VERSION$\$MODEL_NAME$\$MODEL_NAME$Resource;
+use Modules\$MODULE_NAME$\Models\$MODEL_NAME$;
+use Modules\Core\Services\AuthService;
+use Illuminate\Http\Request;
+
+class $MODEL_NAME$Controller extends Controller
+{
+    public function index(Request $request): $MODEL_NAME$Collection|\Illuminate\Http\JsonResponse
+    {
+        if (!AuthService::check('$MODEL_NAME_LOWERCASE$_list')) {
+            return (new UnauthorizedResource())->response()->setStatusCode(403);
+        }
+
+        $oBuilder = $this->prepareQuery(new $MODEL_NAME$());
+        $aData = $oBuilder->get();
+
+        $nCount = -1;
+        if ($request->oData->limit > 0) {
+            $oCountBuilder = $this->prepareQuery(new $MODEL_NAME$(), true);
+            $nCount = $oCountBuilder->count();
+        }
+
+        $response = new $MODEL_NAME$Collection($aData);
+
+        if ($nCount !== -1) {
+            $response->additional(['count' => $nCount]);
+        }
+
+        return $response;
+    }
+
+    public function show($MODEL_NAME$ $$MODEL_NAME_LOWERCASE$): \Illuminate\Http\JsonResponse|$MODEL_NAME$Resource
+    {
+        if (!AuthService::check('$MODEL_NAME_LOWERCASE$_show')) {
+            return (new UnauthorizedResource())->response()->setStatusCode(403);
+        }
+        if (sizeof(\request()->oData->expand) > 0) {
+            $$MODEL_NAME_LOWERCASE$->load(\request()->oData->expand);
+        }
+        return new $MODEL_NAME$Resource($$MODEL_NAME_LOWERCASE$);
+    }
+
+    public function store(Create$MODEL_NAME$Request $request): \Illuminate\Http\JsonResponse
+    {
+        $obj = $request->validated();
+
+        $oResult = $MODEL_NAME$::create($obj);
+
+        return (new $MODEL_NAME$Resource($oResult))->response()->setStatusCode(201);
+    }
+
+    public function update($MODEL_NAME$ $$MODEL_NAME_LOWERCASE$, Update$MODEL_NAME$Request $request): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory
+    {
+        $data = $request->validated();
+        $$MODEL_NAME_LOWERCASE$->update($data);
+
+        return response('', 204);
+    }
+
+    public function destroy($MODEL_NAME$ $$MODEL_NAME_LOWERCASE$): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory
+    {
+        if (!AuthService::check('$MODEL_NAME_LOWERCASE$_delete')) {
+            return (new UnauthorizedResource())->response()->setStatusCode(403);
+        }
+        $$MODEL_NAME_LOWERCASE$->delete();
+
+        return response('', 204);
+    }
+
+    public function batchDelete(Request $request): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory
+    {
+        if (!AuthService::check('$MODEL_NAME_LOWERCASE$_delete')) {
+            return (new UnauthorizedResource())->response()->setStatusCode(403);
+        }
+        $deletingIds = explode(',', $request->query('payload'));
+
+        $MODEL_NAME$::whereIn('id', $deletingIds)->delete();
+
+        return response('', 204);
+    }
+}

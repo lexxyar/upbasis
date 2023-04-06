@@ -1,0 +1,45 @@
+{
+    "name": "lexxsoft/upbasis",
+    "version": "0.1.0",
+    "description": "Universal Platform basis",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "up",
+        "basis",
+        "universal platform",
+        "library",
+        "command",
+        "artisan"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Lexxsoft\\Upbasis\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aleksey Komov",
+            "email": "lexxyar@ya.ru",
+            "homepage": "http://lexxsoft.ru",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "ext-curl": "*",
+        "ext-zip": "*",
+        "symfony/yaml": "^6.2"
+    },
+    "require-dev": {
+        "nwidart/laravel-modules": "^10.0",
+        "laravel/framework": "^10.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lexxsoft\\Upbasis\\UpBasisServiceProvider"
+            ]
+        }
+    }
+}

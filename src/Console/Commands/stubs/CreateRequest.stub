@@ -1,0 +1,21 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Modules\Core\Http\Requests\$VERSION$\AuthFormRequest;
+use Modules\Core\Services\AuthService;
+
+class Create$MODEL_NAME$Request extends AuthFormRequest
+{
+    public function authorize(): bool
+    {
+        return AuthService::check('$MODEL_NAME_LOWERCASE$_create');
+    }
+
+    public function rules(): array
+    {
+        $aDefault = DefaultRules$MODEL_NAME$Request::rules();
+        $aDefault['name'] = 'unique:$MODEL_NAME_LOWERCASE$s';
+        return $aDefault;
+    }
+}

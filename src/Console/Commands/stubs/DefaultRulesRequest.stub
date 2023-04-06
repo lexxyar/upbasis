@@ -1,0 +1,12 @@
+<?php
+namespace $NAMESPACE$;
+
+class DefaultRules$MODEL_NAME$Request
+{
+    public static function rules(): array
+    {
+        return [
+$LOOP_FIELDS$
+        ];
+    }
+}

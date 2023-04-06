@@ -1,0 +1,23 @@
+<?php
+
+return [
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+
+    // --> Changed via php artisan up:init
+    'allowed_methods' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    // <-- Changed via php artisan up:init
+
+    'allowed_origins' => ['*'],
+    'allowed_origins_patterns' => [],
+
+    // --> Changed via php artisan up:init
+    'allowed_headers' => ['Accept', 'Origin', 'Content-Type', 'Authorization', 'Content-Length', 'Content-Disposition'],
+    // <-- Changed via php artisan up:init
+
+    // --> Changed via php artisan up:init
+    'exposed_headers' => ['Content-Disposition', 'X-Suggested-Filename'],
+    // <-- Changed via php artisan up:init
+
+    'max_age' => 0,
+    'supports_credentials' => false,
+];

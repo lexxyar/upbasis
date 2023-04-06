@@ -1,0 +1,14 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Database\Seeder;
+use Modules\$MODULE_NAME$\Models\$MODEL_NAME$;
+
+class $MODEL_NAME$Seeder extends Seeder
+{
+    public function run(): void
+    {
+        $MODEL_NAME$::factory(1)->create();
+    }
+}
