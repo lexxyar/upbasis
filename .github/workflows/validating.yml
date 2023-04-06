@@ -1,12 +1,12 @@
-name: package-validation
-run-name: Package validation
+name: Package validation
+run-name: package-validation
 
 on:
   push:
-    branches: 
+    branches:
     - master
     - main
-    
+
 jobs:
   composer-validation:
     runs-on: ubuntu-latest

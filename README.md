@@ -1,5 +1,7 @@
 # Universal Platform basis
 
+![Package validation status](https://github.com/lexxyar/upbasis/actions/workflows/validating.yml/badge.svg)
+
 This package provide startup functionality to manage Universal Platform
 
 # Installation
@@ -96,7 +98,6 @@ This provides single correct module activator for using Universal Platform.
 > ![IMPORTANT](https://ui-avatars.com/api/?name=!&size=80&background=EB4432&color=FBD2CC&font-size=0.75)
 >
 > Provided module activator use laravel cache system
-
 
 # Provided artisan commands
 
